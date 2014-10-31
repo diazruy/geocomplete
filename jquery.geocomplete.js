@@ -315,8 +315,8 @@
 
         if (results.length > 1){
           this.trigger("geocode:multiple", results);
-        } else {
-          this.trigger("geocode:noresults")
+        } else if (results.length === 0) {
+          this.trigger("geocode:noresults");
         }
 
       } else {
